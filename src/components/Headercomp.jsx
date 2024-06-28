@@ -4,7 +4,9 @@ import Logo from './Logo'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-
+import img1 from '../imgs/plus.png'
+import img5 from '../imgs/navigation (1).png'
+import img3 from '../imgs/homepage.png'
 function Headercomp() {
     const authStatus = useSelector((state)=>state.auth.status)
 
@@ -12,27 +14,32 @@ function Headercomp() {
 
      const navItem = [
       {
-      name : "Home",
+        id: 'home',
+      name : <img src={img3} className='h-7' alt="" />,
       slug : '/',
       active : true
       },
       {
+        id: 'login',
         name : "Login",
         slug : '/Login',
         active : !authStatus
       },
       {
+        id: 'signup',
         name : "Signup",
         slug : '/Signup',
         active : !authStatus
       },
       {
-        name : "All posts",
+        id: 'all-post',
+        name : <img src={img5} className='h-7' alt="" />,
         slug : '/All-posts',
         active : authStatus
       },
       {
-        name : "Add post",
+        id: 'add-post',
+        name : <img src={img1} className='h-7' alt="" />,
         slug : '/Add-post',
         active : authStatus
       }
@@ -40,21 +47,21 @@ function Headercomp() {
     
 
   return (
-    <header>
+    <header className=''>
       <Container>
-        <nav>
+        <nav className='flex items-center justify-between  p-2'>
           <Link to='/'>
           <Logo  / >
           </Link>
         
         
-        <ul>
+        <ul className='flex items-center mr-4   '>
           {
             navItem.map((item)=>
               item.active ?( 
-                <li key={item.name}>
+                <li  key={item.id}>
                   <button onClick={()=> navigate(item.slug)}
-                    className='inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+                    className=' px-1  py-2 duration-200 hover:bg-blue-100 rounded-full'
                     >
                     {item.name}
                   </button>
@@ -65,7 +72,7 @@ function Headercomp() {
             {
               authStatus && (
                 <li>
-                  <Logoutbtn></Logoutbtn>
+                  <Logoutbtn className='mt-4 ml-2' ></Logoutbtn>
                 </li>
               )
             }

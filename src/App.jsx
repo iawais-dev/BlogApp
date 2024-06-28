@@ -27,13 +27,13 @@ useEffect(()=>{
 },[])
 
   return !loading ? (
-  <div className="bg-gray-400">
-    <div>
+  <div className=" ">
+    <div className="">
 <Headercomp></Headercomp>
       <main>
         <Outlet/>
       </main>
-<Footer></Footer>
+{/* <Footer></Footer> */}
     </div>
   </div>) : null
   

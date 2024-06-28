@@ -26,10 +26,10 @@ function AllPosts() {
     return (
         <div>
             <Container>
-                <div>
+                <div className='flex flex-wrap gap-3'>
                     {posts.length > 0 ? (
                         posts.map((post) => (
-                            <div key={post.$id}>
+                            <div className='flex' key={post.$id}>
                                 <PostCards {...post} />
                             </div>
                         ))

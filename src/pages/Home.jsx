@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, PostCards } from '../components/index';
 import service from '../appwrite/config';
-
+import img1 from '../imgs/happy-face.png'
 function Home() {
     const [posts, setPosts] = useState([]);
 
@@ -25,10 +25,11 @@ function Home() {
 
     if (posts.length === 0) {
         return (
-            <div>
+            <div className='flex justify-center items-center text-center h-screen'>
                 <Container>
-                    <div>
+                    <div className='flex flex-col items-center'>
                         <h1>Please Login to see the posts</h1>
+                        <img src={img1} className='h-10' alt="" />
                     </div>
                 </Container>
             </div>
@@ -36,13 +37,16 @@ function Home() {
     }
 
     return (
-        <div>
+        <div className='p-2'>
             <Container>
-                {posts.map((post) => (
-                    <div key={post.$id}>
+                <div className='flex flex-wrap gap-3  '>
+                    {posts.map((post) => (
+                    <div  key={post.$id}>
                         <PostCards {...post} />
                     </div>
                 ))}
+                </div>
+                
             </Container>
         </div>
     );

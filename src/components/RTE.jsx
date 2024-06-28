@@ -11,7 +11,7 @@ function RTE({
 
 
   return (
-    <div>
+    <div className=''>
         {label && <label>{label}</label> }
         <Controller 
         name = {name || 'content'}
