@@ -12,6 +12,8 @@ import Login from "./Login";
 import PostForm from "./Post-form/PostForm";
 import AuthLayout from './AuthLayout'
 import PostCards from "./PostCards";
+import Setting from "./Setting";
+import SetComp from "./SetComp";
 
 export {
 Footer,
@@ -27,6 +29,8 @@ Signup,
 Login,
 PostForm,
 AuthLayout,
-PostCards
+PostCards,
+Setting,
+SetComp,
 
 }

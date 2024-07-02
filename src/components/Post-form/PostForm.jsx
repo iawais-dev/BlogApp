@@ -86,14 +86,20 @@ import service from '../../appwrite/config'
   return (
 
 <form onSubmit={handleSubmit(submit)}>
-  <div className='flex flex-col p-5 bg-orange-400 rounded-lg '>
-    <div className='ml-2  gap-2'>
+  <div className='flex flex-col p-5 bg-orange-500 rounded-lg '>
+
+
+<div className='lg:flex '>
+
+
+    <div className='flex flex-col'>
+<div className='ml-2  gap-2'>
       <div className='flex flex-col'>
          <label htmlFor="">Title</label>
         <Inputbox 
    label ='Title: '
    placeholder= "Title"
-   className = "mb-4 outline-none p-2 pr-10 rounded-md hover:border hover:border-black"
+   className = "mb-4 outline-none p-2 pr-10 w-full rounded-md hover:border hover:border-black"
    {...register('title' ,{required :true})}
    />
       </div>
@@ -103,7 +109,7 @@ import service from '../../appwrite/config'
     label = 'slug:'
     placeholder = 'slug'
     readOnly
-    className= 'mb-4 outline-none hover:border hover:border-black'
+    className= 'mb-4 outline-none p-2 pr-10 w-full rounded-md hover:border hover:border-black'
     {...register('slug',{required:true})}
     onInput={(e)=>{
         setValue('slug' , slugTransform(e.currenTarget.value , {shouldValidate:true}))
@@ -121,8 +127,11 @@ import service from '../../appwrite/config'
     defaultValue={getValues('content')}
     />
 
+    </div>
+    
+
 <div>
-  <div className='bg-gray-300 mt-5 flex p-3 gap-10'>
+  <div className='bg-gray-300 rounded-lg mt-5 flex p-3 gap-10'>
       <label htmlFor="" >Image</label>
 <Inputbox 
    label =  'featuredImage :'
@@ -146,10 +155,11 @@ label = 'status'
 className = "w-40 bg-gray-300 p-2"
 />
 
-<Button type='submit' className='  p-2 m-auto rounded-sm w-[12.8rem] hover:bg-orange-500 mb-10 '>
+<Button type='submit' className=' mt-2  p-2 m-auto rounded-sm w-[12.8rem] hover:bg-orange-700 mb-10 '>
   {post ? " update" :'Post'}
 </Button>
 
+</div>
 </div>
   </div>
 </form>

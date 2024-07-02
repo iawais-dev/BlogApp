@@ -3,15 +3,17 @@ import { useDispatch } from 'react-redux'
 import authService from '../appwrite/auth'
 import { logout } from '../store/authSlice'
 import img1 from '../imgs/logout.png'
+import { useNavigate} from 'react-router-dom'
 function Logoutbtn({
   className = ""
 }) {
   const dispatch = useDispatch()
-
+const navigate =useNavigate()
   const btnhandler = ()=>{
     authService.logout()
     .then(()=>{
       dispatch(logout())
+    navigate('/')
     })
 
   }

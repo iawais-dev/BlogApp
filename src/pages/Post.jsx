@@ -35,32 +35,39 @@ export default function Post() {
     return post ? (
         <div className="py-8">
             <Container>
-                <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
-                    <img
+                <div className="w-full flex flex-col justify-center mb-4 relative border rounded-xl p-2">
+                    <div className="md:p-10 md:pt-0 lg:p-20 lg:pt-0  xl:p-40 xl:pt-0">
+                          <img
                         src={service.getfilePreview(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-xl"
+                        className="rounded-xl "
                     />
+                    </div>
+                  
 
                     {isAuthor && (
-                        <div className="absolute right-6 top-6">
+                        <div className="right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgcolor="bg-green-500" className="mr-3">
+                                <Button  className="mr-3 bg-orange-600 p-2 rounded-md w-20 font-bold">
                                     Edit
                                 </Button>
                             </Link>
-                            <Button bgcolor="bg-red-500" onClick={deletePost}>
+                            <Button className=' bg-orange-600 p-2 rounded-md w-20 font-bold' onClick={deletePost}>
                                 Delete
                             </Button>
                         </div>
                     )}
                 </div>
-                <div className="w-full mb-6">
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
+                <div className="bg-orange-500 p-3">
+                     <div className="w-full mb-6">
+                    <h1 className="text-2xl text-white font-bold">{post.title}</h1>
                 </div>
-                <div className="browser-css">
+                <label className="font-bold">Description:</label>
+                <div className="browser-css text-white rounded-lg pl-2 outline">
                     {parse(post.content)}
                     </div>
+                </div>
+               
             </Container>
         </div>
     ) : null;
