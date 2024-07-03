@@ -6,9 +6,10 @@ function SetComp() {
     const auth = useSelector((state)=>state.auth.status)
     return (
         
-       auth && <div className='flex flex-col w-screen h-screen  '>
-             <Logoutbtn />
-          
+       auth && <div className='flex flex-col lg:items-center  w-screen h-screen bg-orange-400  '>
+            <div className='mt-10 ml-3'>
+            <Logoutbtn className='lg:h-24'/>
+            </div>
              <Footer/>
         </div>
       )

@@ -4,7 +4,7 @@ function Logo({
   className = ""
 }) {
   return (
-    <div className={`font-bold ${className}`}>MegaBlog</div>
+    <div className={`font-bold ${className}`}>InsightfulPages</div>
   )
 }
 

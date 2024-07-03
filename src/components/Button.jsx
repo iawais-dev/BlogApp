@@ -8,7 +8,7 @@ function Button({
 }) {
   return (
    <button 
-   className={`m-2  text-white ${className}`} {...prop}
+   className={`m-2  ${className}`} {...prop}
    >{children}</button>
   )
 }

@@ -89,10 +89,10 @@ import service from '../../appwrite/config'
   <div className='flex flex-col p-5 bg-orange-500 rounded-lg '>
 
 
-<div className='lg:flex '>
+<div className='lg:flex lg:gap-10 '>
 
 
-    <div className='flex flex-col'>
+    <div className='flex flex-col lg:w-[50%]'>
 <div className='ml-2  gap-2'>
       <div className='flex flex-col'>
          <label htmlFor="">Title</label>
@@ -130,8 +130,8 @@ import service from '../../appwrite/config'
     </div>
     
 
-<div>
-  <div className='bg-gray-300 rounded-lg mt-5 flex p-3 gap-10'>
+<div className='lg:w-[50%] flex flex-col'>
+  <div className='bg-white rounded-lg mt-5 flex p-3 gap-10'>
       <label htmlFor="" >Image</label>
 <Inputbox 
    label =  'featuredImage :'
@@ -146,16 +146,18 @@ import service from '../../appwrite/config'
    )}
   </div>
 
-
-<label htmlFor="">Status</label>
+<div className='lg:mt-3'>
+  <label >Status</label>
 <Select
 options ={["active" ,"inactive"]}
 label = 'status'
 {...register('status',{required:true})}
-className = "w-40 bg-gray-300 p-2"
+className = "w-full  rounded-lg bg-white p-2"
 />
+</div>
 
-<Button type='submit' className=' mt-2  p-2 m-auto rounded-sm w-[12.8rem] hover:bg-orange-700 mb-10 '>
+
+<Button type='submit' className=' mt-5  p-2 m-auto  w-[12.8rem] lg:w-full rounded-md  hover:bg-black hover:text-white font-semibold  bg-white text-black mb-10 '>
   {post ? " update" :'Post'}
 </Button>
 

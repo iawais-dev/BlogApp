@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import authService from '../appwrite/auth'
 import { logout } from '../store/authSlice'
-import img1 from '../imgs/logout.png'
+import img1 from '../imgs/switch.png'
 import { useNavigate} from 'react-router-dom'
 function Logoutbtn({
   className = ""
